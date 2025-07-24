@@ -5,15 +5,15 @@ version: 1.0.0+1
 environment:
   sdk: ^3.8.1
 dependencies:
-  flutter:
-    sdk: flutter  
-  cupertino_icons: ^1.0.8
   audioplayers: ^6.4.0
   better_player_plus: ^1.0.8
   cached_network_image: ^3.4.1
+  cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
   firebase_core: ^3.13.1
   firebase_messaging: ^15.2.6
+  flutter:
+    sdk: flutter
   flutter_dotenv: ^5.2.1
   flutter_local_notifications: ^19.2.1
   flutter_localization: ^0.3.2
@@ -37,9 +37,9 @@ dependencies:
   video_compress: ^3.1.4
   webview_flutter: ^4.13.0
 dev_dependencies:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 flutter:
   uses-material-design: true
   assets:

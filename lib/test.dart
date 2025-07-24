@@ -1,5 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:globee/Core/PushNotificationsService.dart';
+import 'package:globee/Core/SMServices.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({super.key});
@@ -9,17 +10,26 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
+  void sendFreeSMS() async {
+    final response = await Dio().post(
+      'https://textbelt.com/text',
+      data: {
+        'phone': '+97471402613',
+        'message': 'رسالة تجريبية من باسل 🧪',
+        'key': 'textbelt',
+      },
+    );
+
+    print(response.data);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            PushNotificationService.sendNotificationToUser(
-              "ddVBwWQUACgXWPggriMLZb:APA91bHTXKas6QCHcboDxlqNu0i3RSZTXDgKBahSGcQFUFcgFaMqNAiNkIIhrMmgSp6JLevV3hwyAmYbfK9v4NL1LoFHyoMQxgJen9YepEyVZoggouXx0u8",
-              "Welcome Employee",
-              "I am User",
-            );
+            sendFreeSMS();
           },
           child: Text("Test Share on iOS"),
         ),

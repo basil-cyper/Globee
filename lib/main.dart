@@ -59,7 +59,7 @@ Future<void> main() async {
   } catch (e) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
-      name: "GlobeeTrading"
+      name: "GlobeeTrading",
     );
   }
 
